@@ -20,12 +20,26 @@ import {
 import "./App.css";
 
 function App() {
-  const [toDo, setToDo] = useState({});
+  const [toDo, setToDo] = useState([
+    { id: 1, title: "Task 1", status: false },
+    { id: 2, title: "Task 2", status: false },
+  ]);
 
   return (
     //use bootstrap's container class?
     <div className="container App">
       <h2>To Do List (ReactJS)</h2>
+      <br></br>
+      {/* <span>{toDo.title}</span> if there is only one task to display */}
+      {/* display tasks - the below does not work if toDo not intialised with a list of dicts because .map only works on arrays*/}
+      {toDo.map((task) => {
+        return (
+          <React.Fragment>
+            <span className="taskText">{task.id}</span>
+            <span className="taskText">{task.title}</span>
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 }
