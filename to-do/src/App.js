@@ -30,12 +30,26 @@ function App() {
     <div className="container App">
       <h2>To Do List (ReactJS)</h2>
       <br></br>
+      {/* display message if there are no tasks */}
+      {/* ternary operator 
+      - {conditionToTest ? ValueIfTrue : ValueIfFalse}
+      - https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/
+      */}
+      {/* short circuit evalutation 
+      - (if this part is true) && (this part will execute)
+      - https://stackoverflow.com/questions/40682064/what-does-operator-indicate-with-this-props-children-react-cloneelemen */}
+      {toDo && toDo.length ? "" : "No Tasks"}
+      {/* Q: Why doesnt it work when I put toDo instead of "" ????? 
+      A: because it just returns empty string, the actual printing of tasks*/}
+
       {/* <span>{toDo.title}</span> if there is only one task to display */}
       {/* display tasks - the below does not work if toDo not intialised with a list of dicts because .map only works on arrays*/}
-      {toDo.map((task) => {
+      {/* you could put task.id instead of index too but index is a built in parameter of map anyway so can use */}
+      {/* React Fragments - https://reactjs.org/docs/fragments.html */}
+      {toDo.map((task, index) => {
         return (
-          <React.Fragment>
-            <span className="taskText">{task.id}</span>
+          <React.Fragment key={task.id}>
+            <span className="taskText">{index + 1}</span>
             <span className="taskText">{task.title}</span>
           </React.Fragment>
         );
