@@ -68,3 +68,47 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+### Notes
+
+//Q: why downloaded bootstrap through reactstrap?? also why he skip some seemingly core command runs??
+//before the imports:
+// install Font Awesome React components: npm i --save @fortawesome/react-fontawesome@latest
+// import bootstrap in app code: npm install --save bootstrap
+
+    {/* ternary operator
+    - {conditionToTest ? ValueIfTrue : ValueIfFalse}
+    - https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/
+    */}
+    {/* short circuit evalutation
+    - (if this part is true) && (this part will execute)
+    - https://stackoverflow.com/questions/40682064/what-does-operator-indicate-with-this-props-children-react-cloneelemen */}
+    - https://stackoverflow.com/questions/28069638/check-if-function-returns-true-to-execute-another-function
+
+    {/* Q: Why doesnt it work when I put toDo instead of "" ?????
+      A: because it just returns empty string, the actual printing of tasks is in toDo.map*/}
+
+      {/* <span>{toDo.title}</span> if there is only one task to display */}
+      {/* display tasks - the below does not work if toDo not intialised with a list of dicts because .map only works on arrays*/}
+      {/* you could put task.id instead of index too but index is a built in parameter of map anyway so can use */}
+      {/* React Fragments - https://reactjs.org/docs/fragments.html */}
+
+/////////
+
+Function components in React look like:
+const ExampleFunction = (param) => {
+hooks used here
+return <div />;
+}
+or
+function ExampleFunction(prop) {
+hooks used here
+return <div />;
+}
+
+/////////
+React Fragments: https://reactjs.org/docs/fragments.html
+
+////////
